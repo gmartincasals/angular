@@ -6,6 +6,10 @@ body {
     margin-top: 20px;
 }
 
+.img-log{
+  width: 150px;
+}
+
 /* Animaciones */
 .animated {
   -webkit-animation-duration: 1s;
