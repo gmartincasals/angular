@@ -5,6 +5,12 @@
 		},
 		{
 			"path": "2. SPA"
+		},
+		{
+			"path": "3. pipes"
+		},
+		{
+			"path": "4. spotiapp"
 		}
 	],
 	"settings": {}
