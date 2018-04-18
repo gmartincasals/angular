@@ -23,8 +23,6 @@ export class SearchComponent {
     }
     this._spotify.getArtistas(this.termino)
       .subscribe(resp => {
-        console.log('Info artistas');
-        console.log(resp);
       });
   }
 
