@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpBackend } from '@angular/common/http';
 import 'rxjs/add/operator/map';
+import { templateJitUrl, ThrowStmt } from '@angular/compiler';
 
 @Injectable()
 export class SpotifyService {
 
   artista: any[] = [];
-  urlSpotify: string = 'https://api.spotify.com/v1/';
-  token: string = 'BQBXAEBZnNRmaUL0n22RFB-8TOhLluL1ttdptxw47Xl8eWyOsaNpSCvf7e9VjcAo1yWVWAoufkiuWDHpX28';
+  tracks: any [] = [];
+  urlSpotify = 'https://api.spotify.com/v1/';
+  token = 'BQARDodRGUBVYocKoE95U5FGRGMnitgR8cvHFFmqE0tT-JXDkaEA_pJUR7mPsnQAh2N5kmRzGgibSs-Z6Fk';
 
 
   constructor(
@@ -19,6 +21,13 @@ export class SpotifyService {
       'authorization': 'Bearer ' + this.token
     });
     return headers;
+  }
+
+  getTopArtista(id: string) {
+    const url = `${this.urlSpotify}artists/${id}/top-tracks?country=US`;
+    const headers = this.getHeaders();
+
+    return this.http.get(url, {headers});
   }
 
   getArtist(id: string) {

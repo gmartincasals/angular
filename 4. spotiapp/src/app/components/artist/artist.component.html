@@ -1,1 +1,14 @@
-{{artista.name}}
+<div class="container top30">
+    <div class="row">
+        <div class="col-md-3">
+            <img [src]="artista.images | sinfoto" class="img-thumbnail img-circle" alt="">
+        </div>
+        <div class="col-md-9">
+            <h1>
+                {{artista.name}}
+                <hr>
+            </h1>
+            <button type="button" class="btn btn-outline-success">Abrir Spotify</button>
+        </div>
+    </div>
+</div>
