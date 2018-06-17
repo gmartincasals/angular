@@ -3,13 +3,15 @@ import { HttpClient, HttpHeaders, HttpBackend } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 import { templateJitUrl, ThrowStmt } from '@angular/compiler';
 
-@Injectable()
+@Injectable({
+  provideIn: 'root'
+})
 export class SpotifyService {
 
   artista: any[] = [];
   tracks: any [] = [];
   urlSpotify = 'https://api.spotify.com/v1/';
-  token = 'BQARDodRGUBVYocKoE95U5FGRGMnitgR8cvHFFmqE0tT-JXDkaEA_pJUR7mPsnQAh2N5kmRzGgibSs-Z6Fk';
+  token = 'BQAw-bg3St-n1di2W8W9AIAegRx2Q7tiWbcIDt26dVLxMTBZoOkwgHWeu17BZnulJ12u9I7lTiG-rtPZEjI';
 
 
   constructor(
