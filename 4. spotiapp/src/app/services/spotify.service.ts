@@ -4,7 +4,7 @@ import 'rxjs/add/operator/map';
 import { templateJitUrl, ThrowStmt } from '@angular/compiler';
 
 @Injectable({
-  provideIn: 'root'
+  providedIn: 'root'
 })
 export class SpotifyService {
 
@@ -17,6 +17,10 @@ export class SpotifyService {
   constructor(
     public http: HttpClient
   ) { }
+
+  private getNewReleases() {
+    const url = `${this.urlSpotify}browse`
+  }
 
   private getHeaders(): HttpHeaders {
     const headers = new HttpHeaders({
